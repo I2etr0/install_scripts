@@ -3,4 +3,4 @@ This scriptы is designed for those who are tired of installing some tools with 
 
 
 # ⚙️ Version
-Soon
+Later
