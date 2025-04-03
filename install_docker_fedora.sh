@@ -33,3 +33,7 @@ sudo systemctl enable --now docker
 # Start Docker Engine:
 echo "${bold} Start Docker Engine ${normal}"
 sudo systemctl start docker
+
+# Let's see version of Docker:
+echo "${bold} Docker version: ${normal}"
+docker -v
