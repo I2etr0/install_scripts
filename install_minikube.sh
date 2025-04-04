@@ -4,10 +4,15 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 # Install minikube .deb package
-echo "${bold}Install minikube .deb package${normal}"
+echo "\n${bold}Install minikube .deb package${normal}\n"
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
 sudo dpkg -i minikube_latest_amd64.deb
 
+# Install Docker
+echo "\n${bold}Install Docker${normal}\n"
+chmod +x install_docker_debian.sh
+./install_docker_debian.sh
+
 # Start minikube
-echo "${bold}Start minikube${normal}"
+echo "\n${bold}Start minikube${normal}\n"
 minikube start
