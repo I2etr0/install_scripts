@@ -12,7 +12,7 @@ export OS=xUbuntu_22.04
 export CRIO_VERSION=1.28w
 
 # Добавляем  репозитории openSUSE в систему
-echo "${bold} Установка CRI-O ${normal}"
+echo "${bold} Добавляем  репозитории openSUSE ${normal}"
 sleep 3
 echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_22.04/ /" | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
 echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/1.28/xUbuntu_22.04/ /" | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable:cri-o:$VERSION.list
@@ -21,7 +21,7 @@ sudo curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontain
 sudo curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_22.04/Release.key | apt-key add -
 
 # Обновляем списки репозиториев и устанавливаем CRIO
-echo "${bold} устанавливаем CRIO ${normal}"
+echo "${bold} Обновляем списки репозиториев и устанавливаем CRIO ${normal}"
 sleep 3
 sudo apt update 
 sudo apt -y install cri-o cri-o-runc cri-tools
