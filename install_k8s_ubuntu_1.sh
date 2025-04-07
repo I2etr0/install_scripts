@@ -57,4 +57,14 @@ sysctl --system
 # Выключаем и убираем из автозагрузки UFW
 systemctl stop ufw && systemctl disable ufw
 
-reboot
+
+echo -n "${bold} Ready for REBOOT? (Y/n) ${normal}"
+read answer
+
+if [[ "$answer" == "Y" || "$answer" == "y"]]; then
+    echo "OK. Rebooting"
+    sleep 5
+    reboot
+else
+    echo "OK. System not reboot. Exit from script"
+    exit 1
