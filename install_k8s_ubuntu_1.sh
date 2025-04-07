@@ -4,7 +4,7 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 # Обновляем списки репозиториев, производим обновление всех пакетов в ОС, а также устанавливаем необходимые пакеты
-echo "${bold} update system ${normal}"
+echo "${bold}Update system ${normal}"
 sleep 3
 
 sudo apt update 
@@ -19,11 +19,11 @@ echo "${bold}Проверяем, пустой ли вывод ${normal}"
 sleep 3
 if [ -z "$output" ]; then
     # Если вывод пустой, выполняем одно действие
-    echo "${bold} Вывод команды пуст. Продолжаем выполнение скрипта. ${normal}"
+    echo "${bold}Вывод команды пуст. Продолжаем выполнение скрипта. ${normal}"
     # Здесь можно добавить дополнительные команды
 else
     # Если вывод не пустой, выполняем другое действие
-    echo "Команда вернула следующий вывод: ${normal}"
+    echo "${bold}Команда вернула следующий вывод: ${normal}"
     echo "$output"
     swapoff -a
 
@@ -79,10 +79,12 @@ systemctl stop ufw && systemctl disable ufw
 echo -n "${bold} Ready for REBOOT? (Y/n) ${normal}"
 read answer
 
-if [[ "$answer" == "Y" || "$answer" == "y"]]; then
-    echo "${bold}OK. Rebooting ${normal}"
+# Проверяем ответ
+if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
+    echo "${bold}OK. Rebooting...${normal}"
     sleep 3
     reboot
 else
-    echo "${bold}OK. System not reboot. Exit from script ${normal}"
+    echo "${bold}OK. System not reboot. Exit from script.${normal}"
     exit 1
+fi
