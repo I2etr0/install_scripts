@@ -14,6 +14,11 @@ sudo apt -y install apt-transport-https ca-certificates curl gnupg2 software-pro
 # Выполняем команду и сохраняем её вывод в переменную
 output=$(free -h 2>&1)
 
+# Делаем бекап /etc/fstab
+echo "${bold}Делаем бекап /etc/fstab${normal}"
+sleep 3
+sudo cp /etc/fstab /etc/fstab.bak 
+
 # Проверяем, пустой ли вывод
 echo "${bold}Проверяем, пустой ли вывод ${normal}"
 sleep 3
@@ -27,14 +32,14 @@ else
     echo "$output"
     swapoff -a
 
-    # Файл, который нужно изменить
-    file="/etc/fstab"
+    # # Файл, который нужно изменить
+    # file="/etc/fstab"
 
-    # Строка, которую нужно закомментировать
-    target_line="/swap.img       none    swap    sw      0       0"
+    # # Строка, которую нужно закомментировать
+    # target_line="/swap.img       none    swap    sw      0       0"
 
-    # Закомментировать строку, добавив "#" в начало
-    sudo sed -i "s/^$target_line/#$target_line/" "$file"
+    # # Закомментировать строку, добавив "#" в начало
+    # sudo sed -i "s/^$target_line/#$target_line/" "$file"
 fi
 
 # Загружаем дополнительные сетевые модули из ядра операционной системы
