@@ -84,3 +84,6 @@ kubectl apply -f https://github.com/coreos/flannel/raw/master/Documentation/kube
 echo "${bold} Проверка статуса запущенных подов ${normal}"
 sleep 3
 kubectl get po -n kube-flannel
+
+# Оставлю ссылку на гайд
+echo "${bold}Дополнительно глянь ссылку: https://timeweb.cloud/tutorials/kubernetes/kak-ustanovit-i-nastroit-kubernetes-ubuntu#ustanovka-kubernetes${normal}"
