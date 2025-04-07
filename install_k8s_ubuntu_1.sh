@@ -82,11 +82,11 @@ sleep 3
 systemctl stop ufw && systemctl disable ufw
 
 
-echo -n "${bold} Ready for REBOOT? (Y/n) ${normal}"
+echo -n "${bold} Ready for REBOOT? [Y/n] ${normal}"
 read answer
 
 # Проверяем ответ
-if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
+if [[ -z "$answer" || "$answer" == "Y" || "$answer" == "y" ]]; then
     echo "${bold}OK. Rebooting...${normal}"
     sleep 3
     reboot
