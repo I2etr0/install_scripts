@@ -5,6 +5,10 @@ sudo mount -o remount,rw /
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+#отключаем swap
+echo "${bold} Повторно отключаем SWAP ${normal}"
+swapoff -a
+
 echo "${bold} Установка CRI-O ${normal}"
 sleep 3
 # задаем переменные, которые пригодятся нам для того, чтобы скачать необходимую версию Crio для определенной версии ОС
