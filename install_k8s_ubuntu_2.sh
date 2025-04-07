@@ -7,7 +7,7 @@ echo "${bold} Установка CRI-O ${normal}"
 
 # задаем переменные, которые пригодятся нам для того, чтобы скачать необходимую версию Crio для определенной версии ОС
 export OS=xUbuntu_22.04
-export CRIO_VERSION=1.25
+export CRIO_VERSION=1.28
 
 # Добавляем  репозитории openSUSE в систему
 echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS/ /"| tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
